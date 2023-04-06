@@ -38,7 +38,7 @@ public class Person {
             surname = "Unknown";
         }
     }
-    
+
     public void setPersonCode(String inputPersonCode) {
         if(inputPersonCode!=null && inputPersonCode.matches("[0-9]{6}[-][0-9]{5}"))
         {
