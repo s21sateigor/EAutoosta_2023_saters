@@ -1,0 +1,52 @@
+package model;
+
+public class Person {
+    private String name;
+    private String surname;
+    private String personCode;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getPersonCode() {
+        return personCode;
+    }
+
+    public void setName(String inputName) {
+        if(inputName!=null && inputName.matches("[A-ZĒŪĪĻĶĢŠĀŽČŅ]{1}[a-zēūīļķģšāžčņ]+([ ][A-ZĒŪĪĻĶĢŠĀŽČŅ]{1}[a-zēūīļķģšāžčņ]+)?"))
+        {
+            name = inputName;
+        }
+        else
+        {
+            name = "Unknown";
+        }
+    }
+
+    public void setSurname(String inputSurname) {
+        if(inputSurname!=null && inputSurname.matches("[A-ZĒŪĪĻĶĢŠĀŽČŅ]{1}[a-zēūīļķģšāžčņ]+([-][A-ZĒŪĪĻĶĢŠĀŽČŅ]{1}[a-zēūīļķģšāžčņ]+)?"))
+        {
+            surname = inputSurname;
+        }
+        else
+        {
+            surname = "Unknown";
+        }
+    }
+    
+    public void setPersonCode(String inputPersonCode) {
+        if(inputPersonCode!=null && inputPersonCode.matches("[0-9]{6}[-][0-9]{5}"))
+        {
+            personCode = inputPersonCode;
+        }
+        else
+        {
+            personCode = "000000-00000";
+        }
+    }
+}
