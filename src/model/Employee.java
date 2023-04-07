@@ -33,8 +33,20 @@ public class Employee extends Person{
         this.contractNumber = year + "_" + firstInitial.toUpperCase() + "_" + lastInitial.toUpperCase();
     }
 
-
     public void setContractNumber(String name, String surname) {
         generateContractNumber(name, surname);
     }
+
+    public Employee(){
+        super();
+        this.contractDate = LocalDate.now();
+        this.contractNumber = "";
+    }
+
+    public Employee(String name, String surname, String personCode, LocalDate contractDate) throws Exception {
+        super(name, surname, personCode);
+        setContractDate(contractDate);
+        generateContractNumber(name, surname);
+    }
+
 }

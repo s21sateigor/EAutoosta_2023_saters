@@ -1,9 +1,12 @@
 package model;
 
+import java.time.LocalDate;
+
 public class Person {
     private String name;
     private String surname;
     private String personCode;
+
 
     public String getName() {
         return name;
@@ -48,5 +51,28 @@ public class Person {
         {
             personCode = "000000-00000";
         }
+    }
+
+    public Person(){
+        super();
+        setName("default.name");
+        setSurname("default.surname");
+        setPersonCode("000000-00000");
+    }
+
+    public Person(String name, String surname, String personCode){
+        super();
+        setName(name);
+        setSurname(surname);
+        setPersonCode(personCode);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", personCode='" + personCode + '\'' +
+                '}';
     }
 }
