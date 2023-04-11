@@ -14,6 +14,14 @@ public class BusDriver extends Employee {
 
     }
 
+    public ArrayList<BusCategory> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(ArrayList<BusCategory> categories) {
+        this.categories = categories;
+    }
+
     public void addCategory(BusCategory busCategory){
         categories.add(busCategory);
     }
