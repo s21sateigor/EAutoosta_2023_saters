@@ -8,12 +8,19 @@ public class Station
     private String workingHour;
     private City city;
 
-    public Station(){
+    public Station() {
         super();
+        id = stationID;
+        stationID++;
     }
 
-    public Station(City city, String title, String workingHour){
+    public Station(City city, String title, String workingHour) {
         super();
+        this.city = city;
+        this.title = title;
+        this.workingHour = workingHour;
+        id = stationID;
+        stationID++;
     }
 
     public City getCity(){
