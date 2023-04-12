@@ -11,7 +11,7 @@ public class BusDriver extends Employee {
     public BusDriver(String name, String surname, String personCode, LocalDate contractDate, int experience, ArrayList<BusCategory> categories) throws Exception {
         super(name, surname, personCode, contractDate);
         setExperience(experience);
-
+        setCategories(categories);
     }
 
     public ArrayList<BusCategory> getCategories() {
@@ -36,5 +36,17 @@ public class BusDriver extends Employee {
 
     public void removeCategory(BusCategory busCategory){
         categories.add(busCategory);
+    }
+
+    @Override
+    public String toString() {
+        return "BusDriver{" +
+                "name= " + getName() +
+                "; surname= " + getSurname() +
+                "; personCode= " + getPersonCode() +
+                "; contractDate= " + getContractDate() +
+                "; categories=" + categories +
+                "; experience=" + experience +
+                '}';
     }
 }
