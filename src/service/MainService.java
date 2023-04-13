@@ -5,6 +5,7 @@ import model.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class MainService {
@@ -75,21 +76,31 @@ public class MainService {
 //        categories.add(BusCategory.schoolbus);
         BusDriver busDriver1 = new BusDriver("Arvis", "Balodis", "090900-22334", LocalDate.now(), 4, categories);
         busDrivers.add(busDriver1);
-        System.out.println(busDriver1);
 
         BusDriver busDriver2 = new BusDriver("Maigonis", "Vētra", "090900-22334", LocalDate.now(), 2, categories);
         busDriver2.addCategory(BusCategory.schoolbus);
         busDriver2.addCategory(BusCategory.minibus);
         busDrivers.add(busDriver2);
-        System.out.println(busDriver2);
 
-        BusDriver busDriver3 = new BusDriver("Ritvars", "Mežāzis", "080802-22211", LocalDate.now(), 2, categories);
+        BusDriver busDriver3 = new BusDriver("Ritvars", "Mežāzis", "080802-22211", LocalDate.now(), 7, categories);
         busDriver3.addCategory(BusCategory.largebus);
         busDrivers.add(busDriver3);
-        System.out.println(busDriver3);
         //Finding all busdrivers by categories
+        for(BusDriver busDriver: busDrivers){
+            System.out.println(busDriver);
+        }
 
+        System.out.println();
+        //Station
+        Station station1 = new Station(City.Daugavpils, "Daugavpils SAO", "8.am. - 4.pm");
+        Station station2 = new Station(City.Riga, "Rigas SAO", "8.am. - 4.pm");
+        stations.add(station1);
+        stations.add(station2);
+        System.out.println(station1);
+        System.out.println(station2);
+        System.out.println();
 
-
+        BusTrip busTrip1 = new BusTrip(station1, station2, LocalDateTime.of(2023,7,1,10,20),LocalDateTime.of(2023,7,1,12,30),busDriver1,40);
+        System.out.println(busTrip1);
     }
 }
